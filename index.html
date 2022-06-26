@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        @media screen and (max-width:600px) {
+            .menubar {
+                display: block;
+            }
+            .contact {
+                width: 100%;
+                display: block;
+            }
+            /* .columns form {
+                width: 100%;
+            } */
+            .socialmedi a {
+                display: inline-block;
+            }
+            .socialmedi {
+                float: none;
+            }
+            .menub {
+                display: block;
+                color: white;
+            }
+        }
+        
+        .menub {
+            display: none;
+        }
+        
+        .all {
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
+            padding: 40px 60px;
+        }
+        
+        .socialmedia {
+            text-align: center;
+        }
+        
+        .socialmedia a {
+            display: block;
+            padding: 1rem;
+            font-size: 19px;
+            text-decoration: none;
+        }
+        
+        .socialmedia a i {
+            color: black;
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 50%;
+        }
+        
+        .socialmedia a:hover {
+            color: red;
+        }
+        
+        .socialmedia a i:hover {
+            background-color: red;
+            color: white;
+            transition: all .4s ease;
+            cursor: pointer;
+        }
+        
+        input[type=text],
+        input[type=password],
+        textarea {
+            width: 100%;
+            resize: none;
+            border: 2px solid black;
+            outline: none;
+            padding: 10px 18px;
+            border-bottom: 2px solid green;
+            margin: 5px 0px 20px 0px;
+        }
+        
+        input[type=submit] {
+            width: 100%;
+            padding: 10px 18px;
+            background-color: green;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        input[type=submit]:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        
+        .footer {
+            padding: 10px;
+            background-color: black;
+            position: relative;
+            /* position: absolute; */
+            width: 100%;
+        }
+        
+        .footer p {
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .team .column {
+            float: left;
+            width: 33.3%;
+        }
+        
+        .team img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .team .card {
+            box-shadow: 4px 0px 8px 0px;
+        }
+        
+        .team {
+            padding: 20px;
+        }
+        
+        .title-inner {
+            animation: sright .9s;
+            animation-iteration-count: 10000000000;
+        }
+        
+        .title-inner a {
+            text-decoration: none;
+            padding: .4rem;
+            background: yellow;
+            display: inline-block;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: .4s ease;
+        }
+        
+        .title-inner a:hover {
+            transition: .4s ease;
+            transform: rotate(20deg);
+        }
+        
+        .contact {
+            float: left;
+            width: 50%;
+        }
+        
+        .all::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .col {
+            float: left;
+            margin-bottom: 16px;
+        }
+        
+        .socialmedia h5 {
+            text-align: center;
+        }
+        
+        form {
+            padding: 0 50px;
+        }
+        
+        .modal {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            animation: zoom .4s;
+            display: none;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            padding-top: 60px;
+            z-index: 1;
+        }
+        
+        .imagecontainer {
+            position: relative;
+            text-align: center;
+            margin: 24px 0px 12px 0px;
+        }
+        
+        .imagecontainer img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            font-size: 30px;
+            font-style: bold;
+        }
+        
+        .modalcontent {
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            margin: auto;
+        }
+        
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes sright {
+            from {
+                color: white;
+            }
+            to {
+                color: yellow;
+            }
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        
+        .rows {
+            position: relative;
+            padding: 20px;
+            padding-top: 50px;
+        }
+        
+        .rows::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .socialmedi {
+            text-align: center;
+            padding: 20px;
+            float: right;
+        }
+        
+        .socialmedi h3 {
+            margin-bottom: 30px;
+            /* animation: sright .6s; */
+        }
+        
+        .socialmedi a {
+            color: black;
+            display: block;
+            padding: 1rem;
+            /* animation: sright .6s; */
+            font-size: 20px;
+            text-decoration: none;
+        }
+        
+        .socialmedi a i:hover {
+            color: white;
+            background-color: red;
+        }
+        
+        .socialmedi a i {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+        }
+        
+        .containers {
+            padding: 20px;
+        }
+        
+        .form1 {
+            float: left;
+            margin: 50px auto;
+        }
+        
+        .modalcontent {
+            margin: auto;
+        }
+        
+        .menub {
+            list-style-type: none;
+            margin: .5rem;
+        }
+        
+        .menub li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 1px;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 1rem;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .menub:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <p>Chui Fc</p>
+            </div>
+            <div class="menub">
+                <li>
+                    <a class="repo" href="#"><i class="fa fa-bars fa-2x"></i>&nbsp;</a>
+                </li>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fa fa-home"></i>&nbsp;Home</a>
+                    <a href="#ros"><i class="fa fa-phone-square"></i>&nbsp;Contact</a>
+                    <a onclick="document.getElementById('moda').style.display='block';" href="#"><i class="fa fa-user"></i>&nbsp;Admin</a>
+                </div>
+            </div>
+            <div class="navbar-links">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-home"></i>&nbsp;Home</a>
+                    </li>
+                    <li>
+                        <a href="#ros"><i class="fa fa-phone-square"></i>&nbsp;Contact</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('moda').style.display='block';" href="#"><i class="fa fa-user"></i>&nbsp;Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="title">
+            <div class="title-inner">
+                <h2>Welcome To Our Website!</h2>
+                <hr>
+                <p>This is a website developed with an aim in naturing youth talents and aiding them in improving their talents.</p>
+                <p>This website is urging members of the society to help the youths in improving their talents.</p>
+                <a href="#">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rows" id="ros">
+        <div class="columns">
+            <form action="" class="form1">
+                <div class="containers">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="">Firstname</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="">Lastname</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="">Message</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea name="" id="" rows="10" placeholder="write something in here!!" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+
+            </form>
+            <div class="socialmedi">
+                <h3>Meet Us On Social Medias</h3>
+                <a href="#"><i class="fa fa-whatsapp"></i>&nbsp; Whatsapp</a>
+                <a href="#"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
+                <a href="#"><i class="fa fa-instagram"></i>&nbsp; Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="team">
+        <div class="column">
+            <div class="card">
+                <img src="exam.jpg" alt="">
+                <div class="cont">
+                    <h4>Joshpat Mwangi</h4>
+                    <p>Head Coach</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="footer">
+        <p>&copy; Copyright 2022 Chui Football Club</p>
+    </div>
+    <div class="modal" id="moda">
+        <form action="" class="modalcontent">
+            <div class="imagecontainer">
+                <span onclick="document.getElementById('moda').style.display='none';" class="close">&times;</span>
+                <img src="kamm.png" alt="">
+            </div>
+            <div class="container">
+                <label for="">Username</label>
+                <input type="text" required>
+                <label for="">password</label>
+                <input type="password" required>
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
